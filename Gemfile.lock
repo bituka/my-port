@@ -88,11 +88,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll-feed
+  jekyll-feed (~> 0.13.0)
   jekyll-paginate (~> 1.1)
   jekyll-seo-tag (~> 2.6)
   jekyll-sitemap (~> 1.4)
   jemoji (~> 0.11.1)
 
 BUNDLED WITH
-   2.1.2
+   2.1.3
