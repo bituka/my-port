@@ -2,16 +2,6 @@
 	font-family: Hack, monospace;
 }
 
-p {
-	letter-spacing: 1px !important;
-	line-height: 1.7 !important;
-	min-height: 1em !important;
-	box-sizing: border-box !important;
-	word-wrap: break-word !important;
-	text-align: justify;
-	margin: 20px 0 !important;
-}
-
 blockquote {
 	border-left: 4px solid #42b983;
 	padding: 0 15px !important;

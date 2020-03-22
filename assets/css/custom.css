@@ -2,7 +2,7 @@
 	outline: none;
 }
 body {
-	color: rgb(167, 158, 139) !important;
+	color:rgb(18, 197, 51);
 }
 
 img {
@@ -118,4 +118,8 @@ footer {
 		margin-left: 10%;
 		margin-right: 10%;
 	}
+}
+
+.inside-json{
+    margin-left: 10%;
 }
