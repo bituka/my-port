@@ -59,12 +59,10 @@ nav a:hover {
 /* main */
 
 main {
-	margin-top: 3rem;
 	margin-left: 20%;
 	margin-right: 20%;
 	display: grid;
 	grid-gap: 1.4rem;
-	line-height: 1.5rem;
 }
 
 .content a {
@@ -121,5 +119,9 @@ footer {
 }
 
 .inside-json{
-    margin-left: 10%;
+    margin-left: 5%;
+}
+
+.atttr{
+    color: dimgray;
 }
