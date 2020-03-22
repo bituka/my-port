@@ -122,6 +122,11 @@ footer {
     margin-left: 5%;
 }
 
+.inside-json a{
+    text-decoration: none;
+}
+
 .atttr{
     color: dimgray;
 }
+
