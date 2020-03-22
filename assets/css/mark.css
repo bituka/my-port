@@ -1,5 +1,5 @@
 * {
-	font-family: 'Space Mono';font-size: 22px;
+	font-family: Hack, monospace;
 }
 
 p {
@@ -27,7 +27,7 @@ strong {
 body {
 	font-size: 15px;
 	/* background: #000c07; */
-	background: rgb(16, 20, 23) !important;
+	background:black;
 }
 
 pre {

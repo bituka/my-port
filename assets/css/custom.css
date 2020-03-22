@@ -9,6 +9,20 @@ img {
 	max-width: 100% !important;
 }
 
+.profile-pic{
+    height: auto;
+    width: 200px;
+  /*  position: absolute;
+     top: 300px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)  */
+    /* display: flex;
+    align-items: center; */
+    display: block;
+    margin: 20px auto;
+}
+
 /* header */
 
 header {
