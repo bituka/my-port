@@ -130,3 +130,15 @@ footer {
     color: dimgray;
 }
 
+.proj-cell-text, .cell-json-obj{
+    text-align: left;
+    font-size: 13px;
+}
+
+.proj-cell-img{
+    margin-bottom: 20px;
+}
+
+.cell-json-obj{
+    margin-left: 20px;
+}
