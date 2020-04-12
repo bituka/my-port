@@ -10,13 +10,13 @@ layout: w3_page
   <div class="proj-cell-text">
     { <br>
         <p class="cell-json-obj">
-        Personal Project: Developed from end to end. 
+        "Personal Project" : "Developed from end to end. 
 I am the the creator, the owner and the web admin. 
 
-Technology used: Jquery, Codeigniter, HTML, CSS, Facebook log-in integration. 
+Technology used: Jquery, Codeigniter, HTML, CSS, Facebook log-in integration." 
 
 <br><br>
-Note: This website is now inactive.
+"Note" : "This website is now inactive."
 </p>
 }
   </div>
