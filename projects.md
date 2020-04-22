@@ -30,9 +30,11 @@ I am the the creator, the owner and the web admin.
   <div class="proj-cell-text">
     { <br>
         <p class="cell-json-obj">
+        
+        <span class="atttr">"Link"</span> : "firedoorsolutions.com"
+        <br><br>
         <span class="atttr">"Tasks"</span> : "Assisted in building the links on the Site." 
 
-<br><br>
 </p>
 }
   </div>
@@ -43,17 +45,17 @@ I am the the creator, the owner and the web admin.
 
 <div class="w3-third port-cell">
   <div class="w3-card w3-container" style="min-height:200px">
-  <img class="proj-cell-img" src="https://i.imgur.com/id715BC.jpg" alt="Project Image"/>
+  <img class="proj-cell-img" src="https://i.imgur.com/3QaAcCG.png" alt="Project Image"/>
   <div class="proj-cell-text">
     { <br>
         <p class="cell-json-obj">
-        <span class="atttr">"Personal Project"</span> : "Developed from end to end. 
-I am the the creator, the owner and the web admin. 
+        <span class="atttr">"Link"</span> : "kallistapr.com"
+        <br><br>
+        <span class="atttr">"Tasks"</span> : "Remaking the Web Functionalities on Members Area Page... 
+Using Codeigniter as PHP Framework" 
 
-Technology used: Jquery, Codeigniter, HTML, CSS, Facebook log-in integration." 
 
-<br><br>
-<span class="atttr">"Note"</span> : "This website is now inactive."
+
 </p>
 }
   </div>
