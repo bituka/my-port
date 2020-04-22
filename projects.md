@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Some Past Projects
 layout: w3_page
 ---
 
@@ -78,17 +78,17 @@ Using Codeigniter as PHP Framework"
 
 <div class="w3-third">
   <div class="w3-card w3-container" style="min-height:200px">
-  <img class="proj-cell-img" src="https://i.imgur.com/id715BC.jpg" alt="Project Image"/>
+  <img class="proj-cell-img" src="https://i.imgur.com/o6xNLMl.png" alt="Project Image"/>
   <div class="proj-cell-text">
     { <br>
         <p class="cell-json-obj">
-        <span class="atttr">"Personal Project"</span> : "Developed from end to end. 
-I am the the creator, the owner and the web admin. 
+<span class="atttr">"Link"</span> : daysafe.com.au
 <br><br>
-<span class="atttr">Technology used</span> : Jquery, Codeigniter, HTML, CSS, Facebook log-in integration." 
 
+        <span class="atttr">"Tasks"</span> : Web Administration / Maintenance
 <br><br>
-<span class="atttr">"Note"</span> : "This website is now inactive."
+<span class="atttr">Technology used</span> : Vanilla PHP, HTML, jQuery, CSS" 
+
 </p>
 }
   </div>
