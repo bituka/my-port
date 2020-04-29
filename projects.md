@@ -87,7 +87,7 @@ Using Codeigniter as PHP Framework"
 
         <span class="atttr">"Tasks"</span> : Web Administration / Maintenance
 <br><br>
-<span class="atttr">Technology used</span> : Vanilla PHP, HTML, jQuery, CSS" 
+<span class="atttr">"Technology used"</span> : Vanilla PHP, HTML, jQuery, CSS" 
 
 </p>
 }
@@ -98,17 +98,19 @@ Using Codeigniter as PHP Framework"
 
 <div class="w3-third port-cell" >
   <div class="w3-card w3-container" style="min-height:200px">
-  <img class="proj-cell-img" src="https://i.imgur.com/r2skA3B.png" alt="Project Image"/>
+  <img class="proj-cell-img" src="https://i.imgur.com/26NI8Fk.png" alt="Project Image"/>
   <div class="proj-cell-text">
     { <br>
         <p class="cell-json-obj">
         
-        <span class="atttr">"Link"</span> : "firedoorsolutions.com"
+        <span class="atttr">"Link"</span> : "dineoutemirates.com"
         <br><br>
-        <span class="atttr">"Tasks"</span> : "Assisted in building the links on the Site." 
+        <span class="atttr">"Tasks"</span> : "Fixing bugs, layouts, and missing parts in back end of the site"
+        <br><br>
+        <span class="atttr">"Technology used"</span> :"HTML, CSS, PHP Scripting" 
 
-</p>
-}
+        </p>
+    }
   </div>
   </div>
 </div>
