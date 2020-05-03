@@ -68,10 +68,7 @@ Using Codeigniter as PHP Framework"
 
 
 
-
-
-
-
+<!-- new row -->
 
 <div class="w3-row-padding w3-center w3-margin-top">
 
@@ -119,16 +116,15 @@ Using Codeigniter as PHP Framework"
 
 <div class="w3-third port-cell">
   <div class="w3-card w3-container" style="min-height:200px">
-  <img class="proj-cell-img" src="https://i.imgur.com/3QaAcCG.png" alt="Project Image"/>
+  <img class="proj-cell-img" src="https://i.imgur.com/0ZxFTXt.png" alt="Project Image"/>
   <div class="proj-cell-text">
     { <br>
         <p class="cell-json-obj">
-        <span class="atttr">"Link"</span> : "kallistapr.com"
+        <span class="atttr">"Link"</span> : "chatching.com"
         <br><br>
-        <span class="atttr">"Tasks"</span> : "Remaking the Web Functionalities on Members Area Page... 
-Using Codeigniter as PHP Framework" 
-
-
+        <span class="atttr">"Tasks"</span> : "Helped in developing using jquery, html and css" 
+        <br><br>
+        <span class="atttr">"Technology"</span> : "Codeigniter, git, jquery" 
 
 </p>
 }
@@ -137,3 +133,30 @@ Using Codeigniter as PHP Framework"
 </div>
 
 </div>
+
+
+<!-- new row -->
+
+<div class="w3-row-padding w3-center w3-margin-top">
+
+<div class="w3-third port-cell">
+  <div class="w3-card w3-container" style="min-height:200px">
+  <img class="proj-cell-img" src="https://i.imgur.com/qAaGxtO.png" alt="Project Image"/>
+  <div class="proj-cell-text">
+    { <br>
+        <p class="cell-json-obj">
+        <span class="atttr">"Link"</span> : "http://cruiseslakemacquarie.com.au/"
+        <br><br>
+        <span class="atttr">"Tasks"</span> : "Lead Web Developer using Wordpress. Includes customization of theme, maintenance, customizing plugins, paypal button integration." 
+        <br><br>
+        <span class="atttr">"Technology"</span> : "Wordpress" 
+
+</p>
+}
+  </div>
+  </div>
+</div>
+
+
+</div>
+

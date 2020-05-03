@@ -120,10 +120,12 @@ footer {
 
 .inside-json{
     margin-left: 5%;
+    overflow-wrap: anywhere;
 }
 
 .inside-json a{
     text-decoration: none;
+    
 }
 
 .atttr{
@@ -141,6 +143,7 @@ footer {
 
 .cell-json-obj{
     margin-left: 20px;
+    overflow-wrap: anywhere;
 }
 
 .port-cell{
