@@ -1,4 +1,752 @@
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garry Garcia | NetSuite & Web Developer</title>
+    <style>
+        /* Dracula Theme Colors */
+        :root {
+            --background: #282A36;
+            --foreground: #F8F8F2;
+            --selection: #44475A;
+            --comment: #6272A4;
+            --red: #FF5555;
+            --orange: #FFB86C;
+            --yellow: #F1FA8C;
+            --green: #50FA7B;
+            --purple: #BD93F9;
+            --cyan: #8BE9FD;
+            --pink: #FF79C6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            background-color: var(--selection);
+            position: relative;
+        }
+
+        nav {
+            background-color: var(--selection);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: var(--cyan);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--selection);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--purple);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--pink);
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+        }
+
+        .hero-text {
+            max-width: 800px;
+        }
+
+        .highlight {
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--comment);
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--pink);
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: var(--foreground);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--green);
+        }
+
+        .contact-links i {
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--selection);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background-color: var(--selection);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--cyan);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--selection);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--purple);
+            border: 4px solid var(--pink);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--selection);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .timeline-company {
+            color: var(--yellow);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: var(--selection);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background-color: var(--background);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            color: var(--pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background-color: var(--comment);
+            color: var(--foreground);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--selection);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--cyan);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--background);
+            border: 1px solid var(--comment);
+            border-radius: 4px;
+            color: var(--foreground);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--pink);
+        }
+
+        button {
+            background-color: var(--purple);
+            color: var(--foreground);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--selection);
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+            }
+
+            .timeline-item.right::after {
+                left: 20px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Garry Keneth Garcia</h1>
+            <p class="subtitle">NetSuite & SuiteCommerce Developer</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <img src="/api/placeholder/400/400" alt="Garry Garcia" class="profile-pic">
+            <div class="hero-text">
+                <h2>NetSuite Developer & SuiteCommerce Specialist</h2>
+                <p>Experienced NetSuite Developer and Support Professional with deep expertise in <span class="highlight">SuiteScript</span>, <span class="highlight">SuiteCommerce development</span>, and related technologies. Adept at analyzing complex problems, developing efficient solutions, and providing exceptional support to ensure optimal system performance.</p>
+
+                <div class="contact-links">
+                    <a href="mailto:gkmgarcia@gmail.com"><i class="fas fa-envelope"></i> gkmgarcia@gmail.com</a>
+                    <a href="tel:+639498832070"><i class="fas fa-phone"></i> +639498832070</a>
+                    <a href="https://github.com/bituka" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://bitbucket.org/bagoong/" target="_blank"><i class="fab fa-bitbucket"></i> Bitbucket</a>
+                    <a href="https://ph.linkedin.com/in/gkmgarcia" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a highly skilled NetSuite Developer with extensive experience in SuiteScript, SuiteFlow, and SuiteCommerce implementations. With over 10 years in web development and specialized NetSuite expertise, I excel at analyzing complex business requirements and delivering tailored solutions that drive efficiency and ROI.</p>
+            <p>My professional journey includes roles at Oracle-NetSuite, ERP Success Partners, Kodella, and now as a developer at Boundaryline Fencing Systems, where I've successfully implemented end-to-end SuiteCommerce Standard solutions and automated key business processes.</p>
+            <p>I'm passionate about creating seamless integrations, optimizing performance, and ensuring exceptional user experiences across NetSuite platforms.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>NetSuite Development</h3>
+                    <ul class="skill-list">
+                        <li>SuiteScript 1.0/2.0</li>
+                        <li>SuiteFlow (Workflow)</li>
+                        <li>Advanced PDF Templates</li>
+                        <li>SuiteTalk & RESTlets</li>
+                        <li>Map/Reduce Scripts</li>
+                        <li>Custom Record Types</li>
+                        <li>Saved Searches</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>E-Commerce</h3>
+                    <ul class="skill-list">
+                        <li>SuiteCommerce Advanced</li>
+                        <li>SuiteCommerce Standard</li>
+                        <li>SiteBuilder</li>
+                        <li>SSP Applications</li>
+                        <li>Shopping Cart Customizations</li>
+                        <li>Payment Gateway Integrations</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul class="skill-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Backbone.js</li>
+                        <li>TypeScript</li>
+                        <li>Responsive Design</li>
+                        <li>Cross-browser Compatibility</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Other Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>API Integrations</li>
+                        <li>SFTP Connections</li>
+                        <li>Python Scripting</li>
+                        <li>Git (GitHub & Bitbucket)</li>
+                        <li>Agile/Scrum Methodologies</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">JAN 2023 – PRESENT</div>
+                        <h3 class="timeline-title">NetSuite/SuiteCommerce Developer</h3>
+                        <h4 class="timeline-company">Boundaryline Fencing Systems</h4>
+                        <ul>
+                            <li>End-to-end implementation and customization of SuiteCommerce Standard (SCS) with WindCave payment integration</li>
+                            <li>Automated key business processes with SuiteScript, SuiteTalk, and SuiteFlow</li>
+                            <li>Engineered automated data pipeline for bank statement imports using SFTP and Python</li>
+                            <li>Provided ongoing support and troubleshooting for NetSuite and SuiteCommerce applications</li>
+                            <li>Minimized third-party expenses by in-house implementation of bank record integration and payment gateway setup</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">AUGUST 2021 – PRESENT</div>
+                        <h3 class="timeline-title">Part-time NetSuite/SuiteCommerce Developer</h3>
+                        <h4 class="timeline-company">Salora ERP</h4>
+                        <ul>
+                            <li>Contributing to complex NetSuite scripting projects with tailored solutions</li>
+                            <li>Providing research, development and support through NetSuite Scripting, SuiteCommerce and Integrations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">MARCH 2021 – JAN 2023</div>
+                        <h3 class="timeline-title">NetSuite Developer</h3>
+                        <h4 class="timeline-company">PCS Wireless</h4>
+                        <ul>
+                            <li>Implemented custom NetSuite solutions using various SuiteScript types</li>
+                            <li>Initiated and led technical documentation efforts for the development team</li>
+                            <li>Collaborated with Support team to troubleshoot and resolve user issues</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">JUNE 2020 – MARCH 2021</div>
+                        <h3 class="timeline-title">NetSuite Technical Consultant</h3>
+                        <h4 class="timeline-company">Atticus Solutions / ERP Success Partners</h4>
+                        <ul>
+                            <li>Resolved customer issues in both technical and functional aspects of NetSuite</li>
+                            <li>Implemented and maintained SiteBuilder/SuiteCommerce Advanced and Standard projects</li>
+                            <li>Assisted team members with Web Store administration and customizations</li>
+                            <li>Customized Advanced PDF and developed SuiteScript solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">DECEMBER 2019 – JUNE 2020</div>
+                        <h3 class="timeline-title">SuiteCommerce Advanced Developer</h3>
+                        <h4 class="timeline-company">EastVantage - Kodella</h4>
+                        <ul>
+                            <li>Created custom NetSuite components to meet critical business needs</li>
+                            <li>Developed E-commerce websites using SuiteScript, Commerce API, Backbone.js, and TypeScript</li>
+                            <li>Designed and maintained custom searches, reports, and objects within NetSuite</li>
+                            <li>Followed Scrum framework and utilized Trello for project management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">OCTOBER 2017 – DECEMBER 2019</div>
+                        <h3 class="timeline-title">Senior Technical Support Engineer</h3>
+                        <h4 class="timeline-company">Oracle-NetSuite</h4>
+                        <ul>
+                            <li>Provided technical support for SiteBuilder, SuiteCommerce Advanced, and NetSuite Applications</li>
+                            <li>Specialized in advanced customization of SuiteCommerce Advanced websites</li>
+                            <li>Conducted training for new feature releases</li>
+                            <li>Worked with the Platinum Team supporting high-tier stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Prior Experience</div>
+                        <h3 class="timeline-title">Additional Professional Experience</h3>
+                        <ul>
+                            <li>E-Commerce Web Developer/Consultant III at Oracle-NetSuite (2016-2017)</li>
+                            <li>Technical Support Engineer at Oracle-NetSuite (2014-2016)</li>
+                            <li>Senior Technical Support Specialist at Oracle-NetSuite (2013-2014)</li>
+                            <li>Freelance Full Stack/Web Developer (2010-2013)</li>
+                            <li>IT Service Desk Engineer at Danzas, Dubai (2008-2012)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Project Showcase</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="SuiteCommerce Standard Implementation" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">SuiteCommerce Standard Implementation</h3>
+                        <p>End-to-end implementation for Boundaryline Fencing Systems, featuring custom extensions and WindCave payment integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SuiteCommerce</span>
+                            <span class="tech-tag">SuiteScript</span>
+                            <span class="tech-tag">Payment Integration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Bank Statement Automation" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Bank Statement Import Automation</h3>
+                        <p>Engineered automated data pipeline for secure retrieval, decryption, transformation, and import of bank statements.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SFTP</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NetSuite Integration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Custom Script Solutions" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Business Process Automation</h3>
+                        <p>Developed custom SuiteScript solutions to automate critical business processes and improve operational efficiency.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SuiteScript 2.0</span>
+                            <span class="tech-tag">SuiteFlow</span>
+                            <span class="tech-tag">Workflow Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Garry Garcia. All Rights Reserved.</p>
+            <div class="contact-links">
+                <a href="mailto:gkmgarcia@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/bituka" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://bitbucket.org/bagoong/" target="_blank"><i class="fab fa-bitbucket"></i></a>
+                <a href="https://ph.linkedin.com/in/gkmgarcia" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+<!-- ---
 title: Welcome to my portforlio
 layout: default
 published: true
@@ -19,8 +767,8 @@ published: true
                <br>
               <span class="atttr">"Bitbucket"</span>: <a href="https://github.com/bituka" target="_blank">"https://bitbucket.org/bagoong/"</a>
             </div>
-     
-      
+
+
         <br>
         }
     </div>
@@ -30,7 +778,6 @@ published: true
 
 
 
-<!-- 
 {% for post in site.posts %}
 <a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a>
-{%endfor%} -->
+{%endfor%} --> -->
